@@ -24,7 +24,7 @@ elif [ "$VERSION" == "3.27.1" ]; then
     QT_VERSION="6.10.0"
     TARGET="iphone:latest:17.0"
 else
-    echo "Error: Unknown version '$VERSION'. Supported versions are: 3.25.0, 3.17.0, 3.27.1"
+    echo "Error: Unknown version '$VERSION'. Supported versions are: 3.17.0, 3.25.0, 3.26.0, 3.27.0, 3.27.1"
     exit 1
 fi
 
