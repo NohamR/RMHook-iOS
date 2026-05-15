@@ -104,6 +104,14 @@ cd src
 ../script/build.sh 3.27.1 release
 ```
 
+## Debugging
+To debug the tweak, you can use `lldb` to attach to the `remarkable_mobile` process on your device.
+You can stream the device logs using `idevicesyslog` from the `libimobiledevice` suite to see the output from your hooks and any potential errors.
+
+```bash
+idevicesyslog | grep 'remarkable_mobile' | grep 'RMHook'
+```
+
 ## How it works
 RMHook-iOS uses Memory Hooking (`MSHookFunction`) via Theos to patch Qt framework functions statically linked inside the iOS app:
 1. **QNetworkAccessManager::createRequest** - Intercepts HTTP/HTTPS requests
