@@ -24,15 +24,32 @@
 
 
 // __ZN21QNetworkAccessManager13createRequestENS_9OperationERK15QNetworkRequestP9QIODevice
-#if V3_25_0
+// Search for strings: "local+http"; "data"; "qrc"; "unix"; "https"; 
+// last function of the vtable of QNetworkAccessManager ("21QNetworkAccessManager")
+#if V3_17_0
+#define QtNetworkAccessManager_createRequest 0x101673958 // sub_101673958
+#elif V3_25_0
 #define QtNetworkAccessManager_createRequest 0x1017FB9F4 // sub_1017FB9F4
+#elif V3_26_0
+#define QtNetworkAccessManager_createRequest 0x1018236C0 // sub_1018236C0
+#elif V3_27_0
+#define QtNetworkAccessManager_createRequest 0x101924584 // sub_101924584
 #elif V3_27_1
 #define QtNetworkAccessManager_createRequest 0x10192472C // sub_10192472C
 #endif
 
 // __ZN10QWebSocket4openERK15QNetworkRequest
-#if V3_25_0
+// Search for strings: "Invalid URL."; "wss"; "SSL Sockets are not supported on this platform."; "w"; "http"; "Unsupported WebSocket scheme: %1"; "Invalid resource name."
+// Then take 2nd xref
+// The function is called by a function referencing "openNotificationSocket" 5 times for RM logs and another one being a big WebSocket function
+#if V3_17_0
+# define QtWebSocket_open 0x100824C5C // sub_100824C5C
+#elif V3_25_0
 # define QtWebSocket_open 0x100526A18 // sub_100526A18
+#elif V3_26_0
+# define QtWebSocket_open 0x100566CF8 // sub_100566CF8
+#elif V3_27_0
+# define QtWebSocket_open 0x10056487C // sub_10056487C
 #elif V3_27_1
 # define QtWebSocket_open 0x100564A24 // sub_100564A24
 #endif
