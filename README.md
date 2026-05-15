@@ -23,6 +23,16 @@ Looking for the Desktop versions? Check out:
 - reMarkable iOS v3.25.0
 - reMarkable iOS v3.27.1
 
+<p align="center">
+  <img src="docs/3.25.0.png" width="45%" />
+  <img src="docs/syncing.png" width="45%" />
+</p>
+
+<p align="center">
+  <img src="docs/3.27.1.png" width="45%" />
+  <img src="docs/acc.png" width="45%" />
+</p>
+
 ## Installation and usage
 
 ⚠️ **For legal reasons, this repository does not include the reMarkable app.** However, a pre-built `.deb` package and a pre-patched `.ipa` are available in the [Releases](https://github.com/NohamR/RMHook-iOS/releases) section.

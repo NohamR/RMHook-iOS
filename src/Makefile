@@ -1,4 +1,4 @@
-TARGET = iphone:latest:17.0
+TARGET = $(target)
 INSTALL_TARGET_PROCESSES = remarkable_mobile
 ARCHS = arm64 
 
