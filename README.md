@@ -59,6 +59,7 @@ cyan -i reMarkable.ipa \
 ### Setup & Configuration
 
 Upon launching the app for the first time, you will be prompted to enter your `rmfakecloud` host and port via an in-app alert dialog.
+When you pair the app the first time, the in-app browser will open `my.remarkable.com` to fetch a one-time pairing code, close the browser and enter the code from `rmfakecloud` direclty into the app prompt.
 
 ![Setup](docs/setup.png)
 
