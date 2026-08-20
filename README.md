@@ -76,13 +76,13 @@ source aqt_venv/bin/activate
 pip install aqtinstall
 ```
 
-Then, download the required Qt versions for iOS to your home directory (e.g., `6.8.2` for the 3.25.0 target and `6.10.0` for the 3.27.1 target):
+Then, download the required Qt versions for iOS to your home directory (e.g., `6.8.2` for the 3.25.0 target and `6.10.3` for the 3.28.0 target):
 ```bash
 # Install Qt 6.8.2 for iOS (used for v3.25.0)
 aqt install-qt mac ios 6.8.2 -m qtwebsockets --outputdir ~/Qt
 
-# Install Qt 6.10.0 for iOS (used for v3.27.1)
-aqt install-qt mac ios 6.10.0 -m qtwebsockets --outputdir ~/Qt
+# Install Qt 6.10.3 for iOS (used for v3.28.0)
+aqt install-qt mac ios 6.10.3 -m qtwebsockets --outputdir ~/Qt
 ```
 
 ### 2. Finding Specific App Function Offsets

@@ -36,6 +36,8 @@
 #define QtNetworkAccessManager_createRequest 0x101924584 // sub_101924584
 #elif V3_27_1
 #define QtNetworkAccessManager_createRequest 0x10192472C // sub_10192472C
+#elif V3_28_0
+#define QtNetworkAccessManager_createRequest 0x101941C9C // sub_101941C9C
 #endif
 
 // __ZN10QWebSocket4openERK15QNetworkRequest
@@ -52,6 +54,8 @@
 # define QtWebSocket_open 0x10056487C // sub_10056487C
 #elif V3_27_1
 # define QtWebSocket_open 0x100564A24 // sub_100564A24
+#elif V3_28_0
+# define QtWebSocket_open 0x1007318F4 // sub_1007318F4
 #endif
 
 

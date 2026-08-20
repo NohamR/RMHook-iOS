@@ -1,6 +1,6 @@
 Package: xyz.noham.rmhook
 Name: RMHook
-Version: 3.27.1
+Version: 3.28.0
 Architecture: iphoneos-arm
 Description: A tweak to hook remarkable mobile app.
 Maintainer: NohamR
