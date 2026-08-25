@@ -6,7 +6,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = RMHook
 
-QT_VERSION ?= 6.8.2
+QT_VERSION ?= 6.10.3
 
 RMHook_FILES = Tweak.xm Config.mm
 RMHook_CFLAGS = -fobjc-arc -F$(HOME)/Qt/$(QT_VERSION)/ios/lib

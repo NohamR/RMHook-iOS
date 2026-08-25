@@ -6,9 +6,11 @@ A dynamic library injection tweak for the reMarkable iOS app, enabling connectio
 
 RMHook-iOS hooks into the reMarkable iOS app's network layer to redirect API calls from reMarkable's official cloud services to your own [rmfakecloud](https://github.com/ddvk/rmfakecloud) server. This allows you to maintain full control over your documents and data on your mobile device.
 
-Looking for the Desktop versions? Check out:
-- **[RMHook](https://github.com/NohamR/RMHook)**: For macOS Desktop
-- **[RMHook-Win](https://github.com/NohamR/RMHook-Win)**: For Windows Desktop
+## Other platforms
+
+- **[RMHook](https://github.com/NohamR/RMHook)**: macOS Desktop
+- **[RMHook-Win](https://github.com/NohamR/RMHook-Win)**: Windows Desktop
+- **[RMHook-Android](https://github.com/NohamR/RMHook-Android)**: Android
 
 ## Features
 
@@ -48,7 +50,7 @@ If you are on a rootless jailbreak, you can install the `.deb` package using Sil
 dpkg -i xyz.noham.rmhook_version_iphoneos-arm64.deb
 ```
 
-#### Option 3: Manual Patching 
+#### Option 3: Manual Patching
 You can patch your own reMarkable `.ipa` using [Cyan](https://github.com/asdfzxcvbn/cyan):
 ```bash
 cyan -i reMarkable.ipa \
@@ -59,9 +61,13 @@ cyan -i reMarkable.ipa \
 ### Setup & Configuration
 
 Upon launching the app for the first time, you will be prompted to enter your `rmfakecloud` host and port via an in-app alert dialog.
-When you pair the app the first time, the in-app browser will open `my.remarkable.com` to fetch a one-time pairing code, close the browser and enter the code from `rmfakecloud` direclty into the app prompt.
+When you pair the app the first time, the in-app browser will open `my.remarkable.com` to fetch a one-time pairing code, close the browser and enter the code from `rmfakecloud` directly into the app prompt.
 
 ![Setup](docs/setup.png)
+
+## Configuration
+
+The host and port are stored in `NSUserDefaults` and persist across app launches. You can change them at any time from the in-app alert dialog.
 
 ## Building
 
@@ -116,6 +122,7 @@ cd src
 ```
 
 ## Debugging
+
 To debug the tweak, you can use `lldb` to attach to the `remarkable_mobile` process on your device.
 You can stream the device logs using `idevicesyslog` from the `libimobiledevice` suite to see the output from your hooks and any potential errors.
 
@@ -124,6 +131,7 @@ idevicesyslog | grep 'remarkable_mobile' | grep 'RMHook'
 ```
 
 ## How it works
+
 RMHook-iOS uses Memory Hooking (`MSHookFunction`) via Theos to patch Qt framework functions statically linked inside the iOS app:
 1. **QNetworkAccessManager::createRequest** - Intercepts HTTP/HTTPS requests
 2. **QWebSocket::open** - Patches WebSocket connections
@@ -131,6 +139,7 @@ RMHook-iOS uses Memory Hooking (`MSHookFunction`) via Theos to patch Qt framewor
 When the app attempts to connect to reMarkable's servers (e.g., `internal.cloud.remarkable.com`), the hooks redirect these requests to your configured host and port, which is saved persistently on the device via `NSUserDefaults` and presented via `UIKit` alerts.
 
 ## Credits
+
 - xovi-rmfakecloud: [asivery/xovi-rmfakecloud](https://github.com/asivery/xovi-rmfakecloud) - Original hooking information
 - rm-xovi-extensions: [asivery/rm-xovi-extensions](https://github.com/asivery/rm-xovi-extensions) - Extension framework for reMarkable
 - rmfakecloud: [ddvk/rmfakecloud](https://github.com/ddvk/rmfakecloud) - Self-hosted reMarkable cloud
@@ -142,3 +151,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Disclaimer
 
 This project is not affiliated with, endorsed by, or sponsored by reMarkable AS. Use at your own risk. This tool modifies the reMarkable iOS application and may violate the application's terms of service.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
