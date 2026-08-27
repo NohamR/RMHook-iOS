@@ -24,6 +24,7 @@ RMHook-iOS hooks into the reMarkable iOS app's network layer to redirect API cal
 **Tested and working on:**
 - reMarkable iOS v3.25.0
 - reMarkable iOS v3.27.1
+- reMarkable iOS v3.28.0
 
 <p align="center">
   <img src="docs/3.25.0.png" width="45%" />
@@ -31,7 +32,7 @@ RMHook-iOS hooks into the reMarkable iOS app's network layer to redirect API cal
 </p>
 
 <p align="center">
-  <img src="docs/3.27.1.png" width="45%" />
+  <img src="docs/3.28.0.png" width="45%" />
   <img src="docs/acc.png" width="45%" />
 </p>
 
